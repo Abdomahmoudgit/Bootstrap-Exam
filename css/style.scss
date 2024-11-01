@@ -12,7 +12,7 @@ body {
   font-weight: 400;
   color: #343434;
 }
-#top-h1 {
+.top-h1 {
   position: relative;
   display: inline-block;
   &::after {
@@ -153,5 +153,26 @@ body {
   .card-text {
     word-spacing: 2px;
     font-size: 14px;
+  }
+}
+#Works {
+  .nav-link {
+    color: #000;
+  }
+  .nav-pills .nav-link.active {
+    position: relative;
+    padding-bottom: 0;
+    background-color: $bg-main-color;
+    &::after {
+      content: "";
+      background-color: black;
+      position: absolute;
+      // margin: auto;
+      text-align: center;
+      height: 2px;
+      bottom: 0;
+      left: 20%;
+      right: 20%;
+    }
   }
 }
