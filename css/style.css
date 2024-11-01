@@ -1,0 +1,133 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  color: #343434;
+}
+
+#top-h1 {
+  position: relative;
+  display: inline-block;
+}
+#top-h1::after {
+  content: "";
+  width: 100%;
+  height: 10px;
+  background-image: url(../imgs/dots.png);
+  background-repeat: repeat;
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  z-index: 0;
+}
+
+.main {
+  color: #fff;
+  position: relative;
+  background-image: url(../imgs/bg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+.main::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.65);
+}
+.main .main-content .hiding-for-main {
+  font-size: 50px;
+  font-weight: 800;
+}
+.main .main-content .span-main {
+  font-size: 60px;
+  font-weight: 300;
+}
+.main .main-content .hiding-for-span {
+  font-size: 50px;
+  font-weight: 150;
+}
+.main .main-content a {
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  width: 35px;
+  height: 35px;
+  line-height: 35px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+#About picture {
+  position: relative;
+  padding: 0 0 0 67px;
+}
+#About picture::after {
+  content: "";
+  width: 80%;
+  height: 80%;
+  position: absolute;
+  left: 0px;
+  bottom: -30px;
+  background-image: url(../imgs/dots.png);
+  background-repeat: repeat;
+  z-index: -1;
+}
+#About .title-text {
+  position: absolute;
+  left: 10px;
+}
+#About .percentage-text {
+  position: absolute;
+  right: 10px;
+}
+#About .buttons .btn-cv {
+  background-color: #000;
+  color: #fff;
+  transition: all 0.5s;
+}
+#About .buttons .btn-cv:hover {
+  background-color: #fff;
+  color: #000;
+}
+#About .buttons .btn-contact {
+  transition: all 0.5s;
+}
+#About .buttons .btn-contact:hover {
+  background-color: #000;
+  color: #fff;
+}
+
+#Services {
+  background-color: #f7f7f7;
+}
+#Services .card {
+  padding: 50px 20px;
+  box-shadow: 0px 10px 30px -8px rgba(0, 0, 0, 0.1) !important;
+  background: #fff;
+  border-radius: 5px;
+}
+#Services .card .i-container {
+  font-size: 30px;
+  width: 70px;
+  height: 70px;
+  line-height: 70px;
+  transition: all 0.5s;
+}
+#Services .card:hover .i-container {
+  background-color: #000 !important;
+  color: #fff !important;
+}
+#Services .card-text {
+  word-spacing: 2px;
+  font-size: 14px;
+}/*# sourceMappingURL=style.css.map */
