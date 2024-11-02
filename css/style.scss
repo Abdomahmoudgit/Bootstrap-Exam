@@ -12,6 +12,15 @@ body {
   font-weight: 400;
   color: #343434;
 }
+p {
+  line-height: 1.6;
+  margin: 0;
+  font-size: 15px;
+  color: #748182;
+}
+.carousel-item {
+  transition: transform 0.2s ease, opacity 0.2s ease-out;
+}
 h1,
 h2,
 h3,
@@ -21,6 +30,13 @@ h6,
 .logo {
   font-family: "Montserrat", sans-serif;
 }
+h4 {
+  font-weight: 500;
+}
+h1 {
+  font-weight: 900 !important;
+}
+
 .top-h1 {
   position: relative;
   display: inline-block;
@@ -179,7 +195,7 @@ h6,
   .nav-pills .nav-link {
     position: relative;
     padding-bottom: 5px;
-    transition: background-color 0.5s ease-in-out;
+    transition: background-color 0.3s ease-in-out;
     &::after {
       content: "";
       background-color: black;
@@ -189,7 +205,7 @@ h6,
       left: 20%;
       right: 0;
       width: 0%; // Initial width to start from
-      transition: width 0.5s ease-in-out;
+      transition: width 0.3s ease-in-out;
     }
 
     &.active {
@@ -209,7 +225,7 @@ h6,
       top: 5%;
       left: 0;
       opacity: 0;
-      gap: 15px;
+      gap: 20px;
     }
     &:hover {
       .overlay {
@@ -226,13 +242,14 @@ h6,
     background-color: #869791;
     width: 10px;
     height: 10px;
+    transition: all 0.1s;
+    &:hover {
+      opacity: 1;
+    }
   }
   picture {
     width: 90px;
     height: 90px;
-  }
-  .carousel-item {
-    transition: transform 0.5s ease, opacity 0.5s ease-out;
   }
 }
 #Statistics {
@@ -249,5 +266,68 @@ h6,
         font-weight: 600;
       }
     }
+  }
+}
+#Team {
+  background-color: $bg-color;
+  .card {
+    img {
+      transition: all 0.5s;
+    }
+    .card-body {
+      background-color: rgba(52, 52, 52, 0.8);
+      h5 {
+        text-transform: uppercase !important;
+        font-weight: bold !important;
+      }
+    }
+    .card-img-layer {
+      &:hover {
+        img {
+          transform: scale(1.2);
+          cursor: pointer;
+        }
+      }
+    }
+    .overlay {
+      width: 90%;
+      height: auto;
+      background-color: rgba(255, 255, 255, 0.95);
+      position: absolute;
+      text-align: center;
+      left: 5%;
+      right: 5%;
+      top: 5%;
+      bottom: 5%;
+      opacity: 0;
+      transition: 0.5s;
+      transform: rotateY(180deg) scale(0.5, 0.5);
+    }
+    &:hover {
+      .overlay {
+        cursor: pointer;
+        opacity: 1;
+        transform: rotateY(0deg) scale(1, 1);
+      }
+    }
+  }
+}
+#Contact {
+  .contact-container {
+    h6 {
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+    .btn-contact {
+      transition: all 0.5s;
+    }
+    &:hover {
+      .btn-contact {
+        background-color: #000;
+        color: $bg-main-color;
+        pointer-events: none;
+      }
+    }
+   
   }
 }

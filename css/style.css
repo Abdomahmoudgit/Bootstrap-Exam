@@ -11,6 +11,17 @@ body {
   color: #343434;
 }
 
+p {
+  line-height: 1.6;
+  margin: 0;
+  font-size: 15px;
+  color: #748182;
+}
+
+.carousel-item {
+  transition: transform 0.2s ease, opacity 0.2s ease-out;
+}
+
 h1,
 h2,
 h3,
@@ -19,6 +30,14 @@ h5,
 h6,
 .logo {
   font-family: "Montserrat", sans-serif;
+}
+
+h4 {
+  font-weight: 500;
+}
+
+h1 {
+  font-weight: 900 !important;
 }
 
 .top-h1 {
@@ -172,7 +191,7 @@ h6,
 #Works .nav-pills .nav-link {
   position: relative;
   padding-bottom: 5px;
-  transition: background-color 0.5s ease-in-out;
+  transition: background-color 0.3s ease-in-out;
 }
 #Works .nav-pills .nav-link::after {
   content: "";
@@ -183,7 +202,7 @@ h6,
   left: 20%;
   right: 0;
   width: 0%;
-  transition: width 0.5s ease-in-out;
+  transition: width 0.3s ease-in-out;
 }
 #Works .nav-pills .nav-link.active {
   background-color: #fff;
@@ -200,7 +219,7 @@ h6,
   top: 5%;
   left: 0;
   opacity: 0;
-  gap: 15px;
+  gap: 20px;
 }
 #Works .card:hover .overlay {
   top: 0;
@@ -215,13 +234,14 @@ h6,
   background-color: #869791;
   width: 10px;
   height: 10px;
+  transition: all 0.1s;
+}
+#Clients .carousel-indicators [data-bs-target]:hover {
+  opacity: 1;
 }
 #Clients picture {
   width: 90px;
   height: 90px;
-}
-#Clients .carousel-item {
-  transition: transform 0.5s ease, opacity 0.5s ease-out;
 }
 
 #Statistics .statistics {
@@ -235,4 +255,54 @@ h6,
 }
 #Statistics .statistics .item p {
   font-weight: 600;
+}
+
+#Team {
+  background-color: #f7f7f7;
+}
+#Team .card img {
+  transition: all 0.5s;
+}
+#Team .card .card-body {
+  background-color: rgba(52, 52, 52, 0.8);
+}
+#Team .card .card-body h5 {
+  text-transform: uppercase !important;
+  font-weight: bold !important;
+}
+#Team .card .card-img-layer:hover img {
+  transform: scale(1.2);
+  cursor: pointer;
+}
+#Team .card .overlay {
+  width: 90%;
+  height: auto;
+  background-color: rgba(255, 255, 255, 0.95);
+  position: absolute;
+  text-align: center;
+  left: 5%;
+  right: 5%;
+  top: 5%;
+  bottom: 5%;
+  opacity: 0;
+  transition: 0.5s;
+  transform: rotateY(180deg) scale(0.5, 0.5);
+}
+#Team .card:hover .overlay {
+  cursor: pointer;
+  opacity: 1;
+  transform: rotateY(0deg) scale(1, 1);
+}
+
+#Contact .contact-container h6 {
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+#Contact .contact-container .btn-contact {
+  transition: all 0.5s;
+}
+#Contact .contact-container:hover .btn-contact {
+  background-color: #000;
+  color: #fff;
+  pointer-events: none;
 }/*# sourceMappingURL=style.css.map */
