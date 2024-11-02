@@ -11,6 +11,16 @@ body {
   color: #343434;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.logo {
+  font-family: "Montserrat", sans-serif;
+}
+
 .top-h1 {
   position: relative;
   display: inline-block;
@@ -27,6 +37,24 @@ body {
   z-index: 0;
 }
 
+.btn-cv {
+  background-color: #000;
+  color: #fff;
+  transition: all 0.5s;
+}
+.btn-cv:hover {
+  background-color: #fff;
+  color: #000;
+}
+
+.btn-contact {
+  transition: all 0.5s;
+}
+.btn-contact:hover {
+  background-color: #000;
+  color: #fff;
+}
+
 .main {
   color: #fff;
   position: relative;
@@ -41,6 +69,28 @@ body {
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.65);
+}
+.main .nav-link {
+  position: relative;
+  padding-bottom: 0;
+  transition: all 0.5s ease-in-out;
+  text-align: center;
+}
+.main .nav-link::after {
+  content: "";
+  background-color: #fff;
+  position: absolute;
+  height: 2px;
+  bottom: 0;
+  left: 10%;
+  width: 80%;
+  transition: width 0.5s ease-in-out;
+}
+.main .nav-link:not(.active)::after {
+  width: 0%;
+}
+.main .nav-link.active::after {
+  width: 80%;
 }
 .main .main-content .hiding-for-main {
   font-size: 50px;
@@ -90,22 +140,6 @@ body {
   position: absolute;
   right: 10px;
 }
-#About .buttons .btn-cv {
-  background-color: #000;
-  color: #fff;
-  transition: all 0.5s;
-}
-#About .buttons .btn-cv:hover {
-  background-color: #fff;
-  color: #000;
-}
-#About .buttons .btn-contact {
-  transition: all 0.5s;
-}
-#About .buttons .btn-contact:hover {
-  background-color: #000;
-  color: #fff;
-}
 
 #Services {
   background-color: #f7f7f7;
@@ -135,18 +169,70 @@ body {
 #Works .nav-link {
   color: #000;
 }
-#Works .nav-pills .nav-link.active {
+#Works .nav-pills .nav-link {
   position: relative;
-  padding-bottom: 0;
-  background-color: #fff;
+  padding-bottom: 5px;
+  transition: background-color 0.5s ease-in-out;
 }
-#Works .nav-pills .nav-link.active::after {
+#Works .nav-pills .nav-link::after {
   content: "";
   background-color: black;
   position: absolute;
-  text-align: center;
   height: 2px;
   bottom: 0;
   left: 20%;
-  right: 20%;
+  right: 0;
+  width: 0%;
+  transition: width 0.5s ease-in-out;
+}
+#Works .nav-pills .nav-link.active {
+  background-color: #fff;
+}
+#Works .nav-pills .nav-link.active::after {
+  width: 60%;
+}
+#Works .card {
+  overflow: hidden;
+}
+#Works .card .overlay {
+  transition: top 0.5s ease-in-out, opacity 0.5s ease-in-out, gap 0.5s ease-in-out;
+  position: absolute;
+  top: 5%;
+  left: 0;
+  opacity: 0;
+  gap: 15px;
+}
+#Works .card:hover .overlay {
+  top: 0;
+  opacity: 1;
+  gap: 0;
+}
+
+#Clients {
+  background-color: #f7f7f7;
+}
+#Clients .carousel-indicators [data-bs-target] {
+  background-color: #869791;
+  width: 10px;
+  height: 10px;
+}
+#Clients picture {
+  width: 90px;
+  height: 90px;
+}
+#Clients .carousel-item {
+  transition: transform 0.5s ease, opacity 0.5s ease-out;
+}
+
+#Statistics .statistics {
+  background-color: #fff;
+}
+#Statistics .statistics .item .icon {
+  font-size: 30px;
+}
+#Statistics .statistics .item h3 {
+  font-weight: 900;
+}
+#Statistics .statistics .item p {
+  font-weight: 600;
 }/*# sourceMappingURL=style.css.map */

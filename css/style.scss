@@ -12,6 +12,15 @@ body {
   font-weight: 400;
   color: #343434;
 }
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.logo {
+  font-family: "Montserrat", sans-serif;
+}
 .top-h1 {
   position: relative;
   display: inline-block;
@@ -25,6 +34,22 @@ body {
     bottom: -5px;
     left: 0;
     z-index: 0;
+  }
+}
+.btn-cv {
+  background-color: #000;
+  color: $bg-main-color;
+  transition: all 0.5s;
+  &:hover {
+    background-color: $bg-main-color;
+    color: #000;
+  }
+}
+.btn-contact {
+  transition: all 0.5s;
+  &:hover {
+    background-color: #000;
+    color: $bg-main-color;
   }
 }
 .main {
@@ -42,24 +67,33 @@ body {
     height: 100%;
     background-color: rgba(0, 0, 0, 0.65);
   }
-  // nav {
-  //   .active {
-  //     position: relative;
-  //     padding-bottom: 0;
-  //     width: fit-content;
-  //     &::after {
-  //       content: "";
-  //       background-color: $bg-main-color;
-  //       position: absolute;
-  //       // margin: auto;
-  //       text-align: center;
-  //       height: 2px;
-  //       bottom: 0;
-  //       left: 8px;
-  //       right: 8px;
-  //     }
-  //   }
-  // }
+
+  .nav-link {
+    position: relative;
+    padding-bottom: 0;
+    transition: all 0.5s ease-in-out;
+    text-align: center;
+
+    &::after {
+      content: "";
+      background-color: $bg-main-color;
+      position: absolute;
+      height: 2px;
+      bottom: 0;
+      left: 10%;
+      width: 80%; // Full width of the text
+      transition: width 0.5s ease-in-out;
+    }
+
+    &:not(.active)::after {
+      width: 0%; // Hidden when not active
+    }
+
+    &.active::after {
+      width: 80%; // Full width when active
+    }
+  }
+
   .main-content {
     .hiding-for-main {
       font-size: 50px;
@@ -112,25 +146,8 @@ body {
     position: absolute;
     right: 10px;
   }
-  .buttons {
-    .btn-cv {
-      background-color: #000;
-      color: $bg-main-color;
-      transition: all 0.5s;
-      &:hover {
-        background-color: $bg-main-color;
-        color: #000;
-      }
-    }
-    .btn-contact {
-      transition: all 0.5s;
-      &:hover {
-        background-color: #000;
-        color: $bg-main-color;
-      }
-    }
-  }
 }
+
 #Services {
   background-color: $bg-color;
   .card {
@@ -159,20 +176,78 @@ body {
   .nav-link {
     color: #000;
   }
-  .nav-pills .nav-link.active {
+  .nav-pills .nav-link {
     position: relative;
-    padding-bottom: 0;
-    background-color: $bg-main-color;
+    padding-bottom: 5px;
+    transition: background-color 0.5s ease-in-out;
     &::after {
       content: "";
       background-color: black;
       position: absolute;
-      // margin: auto;
-      text-align: center;
       height: 2px;
       bottom: 0;
       left: 20%;
-      right: 20%;
+      right: 0;
+      width: 0%; // Initial width to start from
+      transition: width 0.5s ease-in-out;
+    }
+
+    &.active {
+      background-color: $bg-main-color;
+
+      &::after {
+        width: 60%; // Full width when active
+      }
+    }
+  }
+  .card {
+    overflow: hidden;
+    .overlay {
+      transition: top 0.5s ease-in-out, opacity 0.5s ease-in-out,
+        gap 0.5s ease-in-out;
+      position: absolute;
+      top: 5%;
+      left: 0;
+      opacity: 0;
+      gap: 15px;
+    }
+    &:hover {
+      .overlay {
+        top: 0;
+        opacity: 1;
+        gap: 0;
+      }
+    }
+  }
+}
+#Clients {
+  background-color: $bg-color;
+  .carousel-indicators [data-bs-target] {
+    background-color: #869791;
+    width: 10px;
+    height: 10px;
+  }
+  picture {
+    width: 90px;
+    height: 90px;
+  }
+  .carousel-item {
+    transition: transform 0.5s ease, opacity 0.5s ease-out;
+  }
+}
+#Statistics {
+  .statistics {
+    background-color: $bg-main-color;
+    .item {
+      .icon {
+        font-size: 30px;
+      }
+      h3 {
+        font-weight: 900;
+      }
+      p {
+        font-weight: 600;
+      }
     }
   }
 }
