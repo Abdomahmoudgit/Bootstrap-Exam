@@ -17,11 +17,12 @@
     <title>DevFolio</title>
 </head>
 
-<body>
+<body data-bs-spy="scroll" data-bs-target="#navbar" data-bs-root-margin="0px 0px -40%" data-bs-smooth-scroll="true"
+    class="scrollspy-example" tabindex="0">
     <!--? main start -->
-    <section class="main py-5  vh-100 d-flex justify-content-center align-items-center">
+    <section id="main" class="main py-5  vh-100 d-flex justify-content-center align-items-center">
         <!-- ? navbar -->
-        <nav class="navbar navbar-dark p-4 fixed-top navbar-expand-lg ">
+        <nav id="navbar" class="navbar navbar-dark p-4 fixed-top navbar-expand-lg ">
             <div class="container">
                 <a class="navbar-brand ms-5 fw-bolder" style="letter-spacing: 1px;" href="#">DANIELS</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
@@ -39,7 +40,7 @@
                     <div class="offcanvas-body m-sm-auto m-lg-0 ms-lg-auto ">
                         <ul class="navbar-nav gap-3 flex-grow-1 pe-3">
                             <li class="nav-item">
-                                <a class="nav-link active " aria-current="page" href="#">Home</a>
+                                <a class="nav-link active " aria-current="page" href="#main">Home</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="#About">About</a>
@@ -558,7 +559,8 @@
         <div class="container">
             <h1 class="top-h1">Testimonials.</h1>
             <div class="row py-3">
-                <div id="carouselExampleIndicators" class="carousel slide">
+                <div id="carouselExampleIndicators" class="carousel  slide" data-bs-ride="carousel"
+                    data-bs-interval="3000" data-bs-touch="true">
 
                     <div class="carousel-inner py-3">
                         <div class="carousel-item active">
@@ -857,15 +859,26 @@
     </footer>
     <!--? footer end -->
     <!-- ? modal start -->
-    <div style="--bs-modal-bg:#272727; --bs-modal-color:#fff ;" class="modal fade" id="exampleModal" tabindex="-1"
-        aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
+    <div style="--bs-modal-padding: 0rem;--bs-modal-border-color: #27272700;--bs-modal-bg:#27272700; --bs-modal-color:#fff ;"
+        class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+
+        <button class="carousel-control-prev  carousel-dark" type="button" data-bs-target="#carouselExample"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next carousel-dark" type="button" data-bs-target="#carouselExample"
+            data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+        <div class="modal-dialog modal-dialog-centered ">
             <div class="modal-content">
-                <div class="modal-header">
+                <div class="modal-header  border-0">
                     <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
                         aria-label="Close"></button>
                 </div>
-                <div class="modal-body">
+                <div class="modal-body  border-0">
                     <div id="carouselExample" class="carousel slide">
                         <div class="carousel-inner">
                             <div class="carousel-item active">
@@ -887,23 +900,15 @@
                                 <img src="imgs/portfolio/6.jpg" class="d-block w-100" alt="...">
                             </div>
                         </div>
-                        <button class="carousel-control-prev carousel-dark" type="button"
-                            data-bs-target="#carouselExample" data-bs-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Previous</span>
-                        </button>
-                        <button class="carousel-control-next carousel-dark" type="button"
-                            data-bs-target="#carouselExample" data-bs-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Next</span>
-                        </button>
                     </div>
                 </div>
-                <div class="modal-footer">
+                <div class="modal-footer border-0">
                     1 of 6
                 </div>
             </div>
+
         </div>
+
     </div>
     <!-- ?modal end  -->
     <!--! scripts start-->
@@ -919,6 +924,34 @@
             backSpeed: 70,
             backDelay: 1000
 
+        });
+        // offcanvas offcanvas-end text-bg-dark
+        window.addEventListener("scroll", function () {
+            const navbar = document.getElementById("navbar");
+            const offcanvas = document.getElementById("offcanvasDarkNavbar");
+            if (window.scrollY > document.querySelector(".main").offsetHeight) {
+                navbar.classList.remove("navbar-dark");
+                offcanvas.classList.remove("text-bg-dark");
+                navbar.classList.add("navbar-light", "bg-white");
+                offcanvas.classList.add("text-bg-white");
+            } else {
+                navbar.classList.remove("navbar-light", "bg-white");
+                offcanvas.classList.remove("text-bg-white");
+                navbar.classList.add("navbar-dark");
+                offcanvas.classList.add("text-bg-dark");
+            }
+        });
+        window.addEventListener("scroll", function () {
+            const mainSection = document.querySelector(".main");
+            const body = document.body;
+
+            if (window.scrollY < mainSection.offsetHeight) {
+                body.classList.add("main-page");
+                body.classList.remove("other-pages");
+            } else {
+                body.classList.add("other-pages");
+                body.classList.remove("main-page");
+            }
         });
 
     </script>

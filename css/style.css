@@ -1,3 +1,38 @@
+@charset "UTF-8";
+body.main-page .nav-link {
+  position: relative;
+  padding-bottom: 0;
+  transition: all 0.3s ease-in-out;
+  text-align: center;
+}
+body.main-page .nav-link::after {
+  content: "";
+  background-color: #fff;
+  position: absolute;
+  height: 2px;
+  bottom: 0;
+  left: 10%;
+  width: 80%;
+  transition: width 0.3s ease-in-out;
+}
+
+body.other-pages .nav-link {
+  position: relative;
+  padding-bottom: 0;
+  transition: all 0.3s ease-in-out;
+  text-align: center;
+}
+body.other-pages .nav-link::after {
+  content: "";
+  background-color: #000;
+  position: absolute;
+  height: 2px;
+  bottom: 0;
+  left: 10%;
+  width: 80%;
+  transition: width 0.3s ease-in-out;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -92,7 +127,7 @@ h1 {
 .main .nav-link {
   position: relative;
   padding-bottom: 0;
-  transition: all 0.5s ease-in-out;
+  transition: all 0.3s ease-in-out;
   text-align: center;
 }
 .main .nav-link::after {
@@ -103,7 +138,7 @@ h1 {
   bottom: 0;
   left: 10%;
   width: 80%;
-  transition: width 0.5s ease-in-out;
+  transition: width 0.3s ease-in-out;
 }
 .main .nav-link:not(.active)::after {
   width: 0%;
@@ -305,4 +340,24 @@ h1 {
   background-color: #000;
   color: #fff;
   pointer-events: none;
+}
+
+.carousel-control-next-icon {
+  background-image: url("../imgs/forward-solid.svg"); /* ضع مسار الأيقونة هنا */
+  width: 50px;
+  height: 50px;
+  background-size: contain;
+}
+
+.carousel-control-prev-icon {
+  background-image: url("../imgs/forward-solid.svg"); /* ضع مسار الأيقونة هنا */
+  width: 50px;
+  height: 50px;
+  background-size: contain;
+  rotate: 180deg;
+}
+
+.carousel-dark .carousel-control-next-icon,
+.carousel-dark .carousel-control-prev-icon {
+  filter: none;
 }/*# sourceMappingURL=style.css.map */
