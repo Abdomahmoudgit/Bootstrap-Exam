@@ -22,7 +22,7 @@
 <body data-bs-spy="scroll" data-bs-target="#navbar" data-bs-root-margin="0px 0px -40%" data-bs-smooth-scroll="true"
     class="scrollspy-example" tabindex="0">
     <!--? main start -->
-    <section id="main" class="main py-5  vh-100 d-flex justify-content-center align-items-center">
+    <section id="main" class="main vh-100 d-flex justify-content-center align-items-center">
         <!-- ? navbar -->
         <nav id="navbar" class="navbar navbar-dark p-4 fixed-top navbar-expand-lg ">
             <div class="container">
@@ -92,7 +92,7 @@
     </section>
     <!--? main end -->
     <!--? About tart -->
-    <section id="About" class="py-5 my-5">
+    <section style="margin-top:100px;" id="About" class="">
         <div class="container">
             <div class="row justify-content-center align-items-center">
                 <picture class="col-lg-5 pb-5"><img class="img-fluid" src="imgs/hero.jpg" alt="About">
@@ -954,6 +954,16 @@
                 body.classList.add("other-pages");
                 body.classList.remove("main-page");
             }
+        });
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener("click", function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute("href"));
+                window.scrollTo({
+                    top: target.offsetTop - 50, // هنا بتحط المسافة اللي عايزها
+                    behavior: "smooth"
+                });
+            });
         });
 
     </script>

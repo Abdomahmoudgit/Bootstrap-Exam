@@ -46,10 +46,13 @@ body.other-pages {
   box-sizing: border-box;
   scroll-behavior: smooth;
 }
+
 body {
   font-family: "Poppins", sans-serif;
   font-weight: 400;
   color: #343434;
+  scroll-behavior: smooth;
+  scroll-padding-top: 50px;
 }
 p {
   line-height: 1.6;
